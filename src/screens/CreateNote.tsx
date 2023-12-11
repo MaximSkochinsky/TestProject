@@ -7,7 +7,7 @@ const EditNote = ({ createScreen }: {createScreen: any}) => {
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(setCreateNoteValues())
-    }, [])
+    }, [dispatch])
     const tagClickHandler = (tag: any) => {
         dispatch(addCreateClickedTag(tag))
     }

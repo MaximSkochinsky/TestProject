@@ -8,7 +8,7 @@ const EditNote = ({ editScreen } : {editScreen: any}) => {
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(setEditNoteValues())
-    }, [])
+    }, [dispatch])
     const tagClickHandler = (tag : any) => {
         dispatch(addEditClickedTag(tag))
     }

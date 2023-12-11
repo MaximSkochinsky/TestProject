@@ -1,5 +1,3 @@
-import { MouseEventHandler } from "react";
-
 // eslint-disable-next-line @typescript-eslint/no-redeclare
 const TagsList = ({ tags, screen }: {tags: any, screen: any}) => {
     console.log(typeof(tags), typeof(screen))

@@ -131,6 +131,7 @@ export const setCreateNoteValues = () => {
 
 
 export const createNoteTagsValue = (value: any) => {
+    console.log(value)
     return {
         type: CREATE_NOTE_TAGS_VALUE,
         payload: value
@@ -183,8 +184,8 @@ export const clearActiveTags = () => {
 
 
 const getTags = (tags: string, body: string) => {
-    
-    const tagsArr = tags ? tags.split(',').map((item : string) => item.replace(/[^a-zа-яё]/gi, '')).filter((item : string) => item !== '') : null;
+    console.log(tags)
+    const tagsArr = tags ? tags.split(',').map((item : string) => item.replace(/[^a-zа-яё0-9]+/gi, '')).filter((item : string) => item !== '') : null;
     
     const bodyTagsArr = body.match(/\B(#[a-zа-яё0-9]+)(\s|!|\?|\.|,|\]|$)/ig)
         ? body.match(/\B(#[a-zа-яё0-9]+)(\s|!|\?|\.|,|\]|$)/ig)?.map((item : string) => item.replace(/[^a-zа-яё]/gi, '')).filter((item : string) => item !== '') 

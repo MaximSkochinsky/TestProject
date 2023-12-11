@@ -26,6 +26,7 @@ const EditNote = ({ createScreen }: {createScreen: any}) => {
             createScreen();
         } else {
             warningMessage(dispatch)
+            alert("Body is empty!")
         }        
     }
     return (

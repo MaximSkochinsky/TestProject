@@ -13,7 +13,8 @@ const Notes = ({ tagScreen, editScreen, createScreen }: {tagScreen: any, editScr
         dispatch(setTagActive(tag));
         dispatch(setNoteActive())
     }
-    const clickEditHandler = (index: any) => {
+    const clickEditHandler = (index: Number) => {
+        console.log(typeof(index))
         dispatch(setEditNote(index));
         editScreen();
     };
@@ -31,6 +32,7 @@ const Notes = ({ tagScreen, editScreen, createScreen }: {tagScreen: any, editScr
     const clickSaveHandler = () => {
         if(bodyInputValue) {
             dispatch(saveCreateNote(tagsInputValue, bodyInputValue));
+            dispatch(clearActiveTags())
         } else {
             warningMessage(dispatch)
         }        
